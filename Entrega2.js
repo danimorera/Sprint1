@@ -27,7 +27,14 @@ class Persona {
     constructor(nom){
         this.nom = nom;
     };
+
+    dirNom(){
+        console.log(this.nom);
+    };
 };
+
+const alumne = new Persona("Dani");
+alumne.dirNom();
 
 //Nivell 3
 /////Ex1////////////////////////////////////////////////////////
