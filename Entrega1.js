@@ -13,7 +13,8 @@ console.log(missatge);
 
 /////Ex2/////////////////////////////////////////////
 function consoleLiteral(){
-    console.log(`El nom és ${cognoms}, ${nom} ${cognoms}`);
+    let valor = "42";
+    return(`El valor és ${valor}`);
 };
 
 //Nivell 3
@@ -42,6 +43,6 @@ for(let i = 0; i < matriu.length; i++) {
 };
 
 /////Ex2/////////////////////////////////////////////
-let autoinvocable = (function (nom2) {
+let autoinvocable = (function(nom2) {
        console.log(`El nom és ${nom2}`);
    })(nom);
