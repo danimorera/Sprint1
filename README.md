@@ -3,7 +3,7 @@
 ## Entrega 1.1: Functions & Template Literals
 OK
 ## Entrega 1.2
-Pending
+Reviewing
 ## Entrega 1.3
 Pending
 ## Entrega 1.4

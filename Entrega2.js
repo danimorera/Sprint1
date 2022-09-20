@@ -58,4 +58,3 @@ class Concreta extends Abstracta {};
 const dog = new Concreta("Milu");
 const cat = new Concreta("Garfield");
 const duck = new Concreta("Donald");
-const idea = new Abstracta("Liberalisme");
