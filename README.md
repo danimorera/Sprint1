@@ -1,9 +1,9 @@
 # Sprint 1 Node basics
 
 ## Entrega 1.1: Functions & Template Literals
-Reviewing
+OK
 ## Entrega 1.2
-Pending
+OK
 ## Entrega 1.3
 Pending
 ## Entrega 1.4
