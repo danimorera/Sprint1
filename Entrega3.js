@@ -6,7 +6,7 @@ resolve() o reject() que rep. Invoca-la passant-li les dues
 funcions de manera que imprimeixin un missatge diferent depenent
  de si la Promise es resol o no.
 */
-
+//minut 12 del video recomanat, check freecode ECMA 6
 /////Ex2////////////////////////////////////////////////////////
 
 /*
