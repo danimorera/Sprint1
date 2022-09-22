@@ -6,7 +6,25 @@ resolve() o reject() que rep. Invoca-la passant-li les dues
 funcions de manera que imprimeixin un missatge diferent depenent
  de si la Promise es resol o no.
 */
-//minut 12 del video recomanat, check freecode ECMA 6
+
+const myPromise = new Promise((resolve, reject) => {
+    let success = true;
+    if(success) {
+      resolve("A Lannister always pays his debts");
+    } else {
+      reject("I told you not to trust me!");
+    }
+  });
+
+myPromise.then(result => {
+   console.log(result);
+ });
+
+myPromise.catch(error => {
+   console.log(error);
+ })
+
+
 /////Ex2////////////////////////////////////////////////////////
 
 /*
@@ -14,14 +32,22 @@ Crea una arrow function que rebi un paràmetre i una funció
 callback i li passi a la funció un missatge o un altre 
 (que s'imprimirà per consola) en funció del paràmetre rebut.
 */
+const operation = (x, callback) => {
+    return callback(x);
+};
+
+operation(3, (x) => {
+    x >= 0 ? console.log("Positiu o 0") : console.log("Negatiu");
+});
 
 
 //Nivell 2
+
 let employees = [{
-    id: 1,
+    id: 1, //employees[0].id
     name: 'Linux Torvalds'
 }, {
-    id: 2,
+    id: 2, //employees[1].id
     name: 'Bill Gates'
 },{
     id: 3,
@@ -44,6 +70,36 @@ Donats els objectes employees i salaries, crea una arrow
 function getEmployee() que retorni una Promise efectuant la 
 cerca en l'objecte pel seu id.
 */
+const readline = require("readline")
+
+const rl =
+ readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+})
+
+const  getEmployee = () => {
+    let found = false;
+    let id = "";
+    rl.question("Enter lookup Id: \n", function (string) {
+        userInput = string;
+        rl.close();
+      });
+
+    for (let i = 0; i < employees.length; i++) {
+        if(id == employees[i].id){
+            found = true;
+        }
+    }
+    return new Promise((resolve, reject) => {
+    if(found) {
+      resolve("Found!");
+    } else {
+      reject("Not found!");
+    }
+  })
+};
+
 /////Ex2////////////////////////////////////////////////////////
 /*
 Crea una altra arrow function getSalary() similar a l'anterior
@@ -62,4 +118,8 @@ Invoca la primera funció getEmployee() i després getSalary()
 /* 
 Fixa un element catch a la invocació del nivell anterior que
  capturi qualsevol error i el mostri per la consola.
+ 
+ myPromise.catch(error => {
+  
+});
 */
