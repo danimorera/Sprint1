@@ -44,31 +44,3 @@ Escriu una function creadora d'objectes que faci instàncies
 d'una classe abstracta. Invoca-la amb diferents definicions.
 */
 
-/* class Abstract {
-    constructor(name){
-        if (this.constructor === Abstract){
-            throw new Error("This is an abstract class and cannot be instantiated");
-        };
-        this.name = name;
-    };
-}; */
-
-function Abstract() {
-    this.name = 'random';
-    if (this.constructor === Abstract) {
-        throw new Error("This is an abstract class and cannot be instantiated");
-    };
-
-}
-
-function createObj() {
-    return (Object.create(Abstract.prototype, { constructor: {value: Abstract}}));
-}
-
-const dani = createObj('Dani');
-const irene = createObj('Irene');
-
-console.log(Abstract);
-console.log(dani instanceof Abstract);
-
-

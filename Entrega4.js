@@ -18,15 +18,7 @@ let salaries = [{
 }, {
     id: 3,
     salary: 2000
-}]; */
-
-//Nivell 1
-/////Ex1//////////////////////////////////////////////////////////////////
-/* Crea una funció asíncrona que rebi un id d'empleat/da i 
-imprimeixi per pantalla el nom de l'empleat/da i el seu salari, 
-usant les funcions getEmployee() i getSalary() que has definit 
-a la tasca anterior.
- */
+}]; 
 const getEmployee = (id) => {
     return new Promise((resolve, reject) => {
         let found = false;
@@ -66,6 +58,15 @@ const getSalary = (employee) => {
         }
     })
 };
+*/
+
+//Nivell 1
+/////Ex1//////////////////////////////////////////////////////////////////
+/* Crea una funció asíncrona que rebi un id d'empleat/da i 
+imprimeixi per pantalla el nom de l'empleat/da i el seu salari, 
+usant les funcions getEmployee() i getSalary() que has definit 
+a la tasca anterior.
+ */
 
 const getEmpAsync = async (id) => {
     try {
