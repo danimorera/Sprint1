@@ -19,10 +19,12 @@ Invoca una funció que retorni un valor des de dins
  d'una template literal.
  - Al N2 E2 no estàs cridant a una funció des de dins
  d'un template literal
+ -Al N2 E2 no necessites que la funcio retorni un 
+ template literal, pot retornar el valor directament
 */
 function literal() {
     let valor = "42";
-    return(`${valor}`);
+    return(valor);
 };
 console.log(`${literal()}`);
 
@@ -34,9 +36,6 @@ mitjançant un bucle de manera que cada funció compti
 del 0 al 9 per la consola. Invoca cada funció de 
 l'array iterativament. Haurà de mostrar-se per 
 consola el compte del 0 al 9 deu vegades.
-
-- Al N3 has de guardar la definició de la funció 
-amb un bucle, no a lo bestia!
 */
 
 const matriu = [];
@@ -46,6 +45,8 @@ for (let i = 0; i < 10; i++) {
             console.log(i);
         };
     };
+};
+for (let i = 0; i < matriu.length; i++) {
     matriu[i]();
 };
 

@@ -4,8 +4,8 @@
 Mostra per la consola el resultat d'una arrow function
 autoinvocable que sumi dos nombres.
 */
-const suma = (() => 10 + 2 );
-console.log(suma());
+(function() {console.log(10 + 2)})();
+
 
 //Nivell 2
 /////Ex1////////////////////////////////////////////////////////
@@ -44,17 +44,31 @@ Escriu una function creadora d'objectes que faci instàncies
 d'una classe abstracta. Invoca-la amb diferents definicions.
 */
 
-class Abstracta {
-    constructor (name) {
-        if (this.constructor === Abstracta){
+/* class Abstract {
+    constructor(name){
+        if (this.constructor === Abstract){
             throw new Error("This is an abstract class and cannot be instantiated");
         };
         this.name = name;
     };
-};
+}; */
 
-class Concreta extends Abstracta {};
+function Abstract() {
+    this.name = 'random';
+    if (this.constructor === Abstract) {
+        throw new Error("This is an abstract class and cannot be instantiated");
+    };
 
-const dog = new Concreta("Milu");
-const cat = new Concreta("Garfield");
-const duck = new Concreta("Donald");
+}
+
+function createObj() {
+    return (Object.create(Abstract.prototype, { constructor: {value: Abstract}}));
+}
+
+const dani = createObj('Dani');
+const irene = createObj('Irene');
+
+console.log(Abstract);
+console.log(dani instanceof Abstract);
+
+

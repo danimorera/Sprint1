@@ -70,30 +70,20 @@ Donats els objectes employees i salaries, crea una arrow
 function getEmployee() que retorni una Promise efectuant la 
 cerca en l'objecte pel seu id.
 */
-const readline = require("readline")
-
-const rl =
- readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-})
-
-const  getEmployee = () => {
-    let found = false;
-    let id = "";
-    rl.question("Enter lookup Id: \n", function (string) {
-        userInput = string;
-        rl.close();
-      });
-
-    for (let i = 0; i < employees.length; i++) {
-        if(id == employees[i].id){
-            found = true;
-        }
-    }
-    return new Promise((resolve, reject) => {
+const  getEmployee = (id) => {
+  return new Promise((resolve, reject) => {
+      let found = false;
+      let i = 0
+      while (i < employees.length && !found) {
+          if(id == employees[i].id){
+              found = true;
+          }
+          if(!found){
+            i++;
+          }
+      }
     if(found) {
-      resolve("Found!");
+      resolve(employees[i]);
     } else {
       reject("Not found!");
     }
@@ -106,20 +96,51 @@ Crea una altra arrow function getSalary() similar a l'anterior
  que rebi com a paràmetre un objecte employee i retorni el seu
  salari.
 */
+
+const  getSalary = (employee) => {
+  return new Promise((resolve, reject) => {
+        let found = false;
+        let i = 0;
+        while (i < salaries.length && !found) {
+            if(employee.id == salaries[i].id){
+                found = true;
+            }
+            if(!found){
+              i++;
+            }
+        }
+    if(found) {
+      resolve(salaries[i].salary);
+    } else {
+      reject("Not found!");
+    }
+  })
+};
+/* getSalary(employees[0])
+    .then((result => console.log(result))); */
+
 /////Ex3////////////////////////////////////////////////////////
 /*
 Invoca la primera funció getEmployee() i després getSalary()
  niant l'execució de les dues promises de manera que es retorni
   per la consola el nom de l'empleat/da i el seu salari.
 */
+//console.log(employees[0]);
+getEmployee(1)
+    .then(obEmpl => 
+      getSalary(obEmpl) //retorna la promesa de salari
+        .then((obSalary => console.log(`${obEmpl.name} : ${obSalary}`)))); //retorna el salari
+
+
 
 //Nivell 3
 /////Ex1////////////////////////////////////////////////////////
 /* 
 Fixa un element catch a la invocació del nivell anterior que
- capturi qualsevol error i el mostri per la consola.
- 
- myPromise.catch(error => {
-  
-});
+ capturi qualsevol error i el mostri per la consola.  
 */
+getEmployee(1)
+    .then(obEmpl => 
+      getSalary(obEmpl) //retorna la promesa de salari
+        .then((obSalary => console.log(`${obEmpl.name} : ${obSalary}`)))) //retorna el salari
+    .catch(error => {console.log(error)});
