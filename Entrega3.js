@@ -1,5 +1,5 @@
 //Nivell 1
-/////Ex1////////////////////////////////////////////////////////
+/////Ex1//////////////////////////////////////////////////////////////////
 /*
 Crea una funció que retorni una Promise que invoqui la funció 
 resolve() o reject() que rep. Invoca-la passant-li les dues 
@@ -22,7 +22,7 @@ myPromise().then(result => {console.log(result)});
 myPromise().catch(error => {console.log(error)});
 
 
-/////Ex2////////////////////////////////////////////////////////
+/////Ex2//////////////////////////////////////////////////////////////////
 
 /*
 Crea una arrow function que rebi un paràmetre i una funció 
@@ -61,7 +61,7 @@ let salaries = [{
   id: 3,
   salary: 2000
 }];
-/////Ex1////////////////////////////////////////////////////////
+/////Ex1//////////////////////////////////////////////////////////////////
 /*
 Donats els objectes employees i salaries, crea una arrow 
 function getEmployee() que retorni una Promise efectuant la 
@@ -87,7 +87,7 @@ const getEmployee = (id) => {
   })
 };
 
-/////Ex2////////////////////////////////////////////////////////
+/////Ex2//////////////////////////////////////////////////////////////////
 /*
 Crea una altra arrow function getSalary() similar a l'anterior
  que rebi com a paràmetre un objecte employee i retorni el seu
@@ -116,7 +116,7 @@ const getSalary = (employee) => {
 /* getSalary(employees[0])
     .then((result => console.log(result))); */
 
-/////Ex3////////////////////////////////////////////////////////
+/////Ex3//////////////////////////////////////////////////////////////////
 /*
 Invoca la primera funció getEmployee() i després getSalary()
  niant l'execució de les dues promises de manera que es retorni
@@ -131,7 +131,7 @@ getEmployee(1)
 
 
 //Nivell 3
-/////Ex1////////////////////////////////////////////////////////
+/////Ex1//////////////////////////////////////////////////////////////////
 /* 
 Fixa un element catch a la invocació del nivell anterior que
  capturi qualsevol error i el mostri per la consola.  
@@ -141,3 +141,8 @@ getEmployee(1)
     getSalary(obEmpl) //retorna la promesa de salari
       .then((obSalary => console.log(`${obEmpl.name} : ${obSalary}`)))) //retorna el salari
   .catch(error => { console.log(error) });
+
+  module.exports = {
+    getEmployee,
+    getSalary
+  };

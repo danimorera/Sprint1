@@ -1,16 +1,17 @@
-const sum = (num1,num2) => {
-    return (num1 + num2)
+const suma = (num1, num2) => {
+    return (num1 + num2);
 };
 
-const substr = (num1,num2) => {
-    return (num1 - num2)
+const resta = (num1, num2) => {
+    return (num1 - num2);
 };
 
-const multipl = (num1,num2) => {
-    return (num1 * num2)
+const mult = (num1, num2) => {
+    return (num1 * num2);
 };
 
-const divide = (num1,num2) => {
-    return (num1 / num2)
+const div = (num1, num2) => {
+    return (num1 / num2);
 };
 
+module.exports = {suma, resta, mult, div};
