@@ -9,5 +9,4 @@
 #### [Entrega 1.4 Async / Await](https://github.com/danimorera/Sprint1/blob/main/Entrega4.js)
 
 #### [Entrega 1.5 Node Utils](https://github.com/danimorera/Sprint1/tree/main/entrega5)
-#### Entrega 1.6: Testing
-    Pending
+#### [Entrega 1.6: Testing](https://github.com/danimorera/Sprint1/tree/main/entrega5)

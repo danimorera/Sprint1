@@ -18,8 +18,8 @@ const myPromise = () => {
   })
 };
 
-myPromise().then(result => {console.log(result)});
-myPromise().catch(error => {console.log(error)});
+myPromise().then(result => { console.log(result) });
+myPromise().catch(error => { console.log(error) });
 
 
 /////Ex2//////////////////////////////////////////////////////////////////
@@ -141,8 +141,3 @@ getEmployee(1)
     getSalary(obEmpl) //retorna la promesa de salari
       .then((obSalary => console.log(`${obEmpl.name} : ${obSalary}`)))) //retorna el salari
   .catch(error => { console.log(error) });
-
-  module.exports = {
-    getEmployee,
-    getSalary
-  };

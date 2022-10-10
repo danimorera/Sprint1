@@ -1,4 +1,4 @@
 tutorials
 tests
-entrega6
-./entrega6/node_modules
+entrega6/node_modules
+entrega6/__tests__/logger.js
