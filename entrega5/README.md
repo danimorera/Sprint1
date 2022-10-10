@@ -1,0 +1,1 @@
+Inclou un README amb instruccions per a l'execució de cada part.
