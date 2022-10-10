@@ -1,14 +1,14 @@
 const util = require('node:util');
 const fs = require('node:fs');
 const zlib = require('zlib');
-const {exec} = require('child_process')
+const { exec } = require('child_process')
 
 //Nivell 1
 /////Ex1//////////////////////////////////////////////////////////////////
 /*Crea una funció que, en executar-la, escrigui una frase en un fitxer.*/
 
 
-function n1fitxer() {
+function writeSentence() {
     fs.appendFile('fitxer1.txt', 'Nova frase', function (err) {
         if (err) {
             console.log(err);
@@ -18,12 +18,14 @@ function n1fitxer() {
     })
 };
 
+//writeSentence()
+
 
 /////Ex2//////////////////////////////////////////////////////////////////
 /*Crea una altra funció que mostri per consola el contingut del fitxer de 
 l'exercici anterior.*/
 
-function mostrar() {
+function show() {
     fs.readFile('./fitxer1.txt', (error, data) => {
         if (error) {
             throw error;
@@ -31,6 +33,9 @@ function mostrar() {
         console.log(data.toString());
     });
 };
+
+//show()
+
 
 /////Ex3//////////////////////////////////////////////////////////////////
 /*Crea una funció que comprimeixi el fitxer del nivell 1.*/
@@ -43,12 +48,17 @@ function compress() {
     console.log("Arxiu comprimit correctament");
 };
 
+//compress()
+
 /* function decompress() {
     const unzip = zlib.createUnzip(); 
     const inp = fs.createReadStream('fitxerComprimit.txt.zip');
     const out = fs.createWriteStream('./fitxerDescomprimit.txt');
     inp.pipe(unzip).pipe(out);
-}; */
+}; 
+
+decompress()
+*/
 
 //Nivell 2
 
@@ -78,7 +88,8 @@ function listUserDir() {
         console.log(`stdout:\n${stdout}`)
     });
 };
-listUserDir();
+
+//listUserDir();
 
 
 //Nivell 3
