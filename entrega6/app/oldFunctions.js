@@ -9,9 +9,9 @@ const operation = (x, callback) => {
     return callback(x);
 };
 
-operation(3, (x) => {
+/* operation(3, (x) => {
     x >= 0 ? console.log("Positiu o 0") : console.log("Negatiu");
-});
+}); */
 
 
 
@@ -64,6 +64,8 @@ const getEmployee = (id) => {
     })
 };
 
+
+
 /////Ex2//////////////////////////////////////////////////////////////////
 /*
 Crea una altra arrow function getSalary() similar a l'anterior
@@ -97,45 +99,30 @@ const getSalary = (employee) => {
 
 //Async / Await
 //N2 E1
-/*
-/* Crea una funció que retorni el doble del número que li passa com a 
-paràmetre després de 2 segons. */
 
-const double = async (num) => {
+const triple = async (num) => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            resolve(num * 2)
+            resolve(num * 3);
         }, 2000);
     })
 };
-double(2).then(result => {
-    console.log(result);
-});
 
-/* 
-Crea una altra funció que rebi tres números i calculi la suma dels seus 
-dobles fent servir la funció anterior.
- */
-
-const sumDoubles = async (num1, num2, num3) => {
+const sumTriples = async (num1, num2) => {
     try {
-        const double1 = await double(num1);
-        const double2 = await double(num2);
-        const double3 = await double(num3);
+        const triple1 = await triple(num1);
+        const triple2 = await triple(num2);
 
-        return (double1 + double2 + double3);
+        return (triple1 + triple2);
     } catch (e) {
         console.log('error');
     }
 };
-sumDoubles(2, 2, 2).then(result => {
-    console.log(result);
-});
 
 module.exports = {
     operation,
     getEmployee,
     getSalary,
-    double,
-    sumDoubles
+    triple,
+    sumTriples
 };
