@@ -1,64 +1,9 @@
-/* let employees = [{
-    id: 1, //employees[0].id
-    name: 'Linux Torvalds'
-}, {
-    id: 2, //employees[1].id
-    name: 'Bill Gates'
-}, {
-    id: 3,
-    name: 'Jeff Bezos'
-}];
-
-let salaries = [{
-    id: 1,
-    salary: 4000
-}, {
-    id: 2,
-    salary: 1000
-}, {
-    id: 3,
-    salary: 2000
-}]; 
-const getEmployee = (id) => {
-    return new Promise((resolve, reject) => {
-        let found = false;
-        let i = 0
-        while (i < employees.length && !found) {
-            if (id == employees[i].id) {
-                found = true;
-            }
-            if (!found) {
-                i++;
-            }
-        }
-        if (found) {
-            resolve(employees[i]);
-        } else {
-            reject("Not found!");
-        }
-    })
-};
-
-const getSalary = (employee) => {
-    return new Promise((resolve, reject) => {
-        let found = false;
-        let i = 0;
-        while (i < salaries.length && !found) {
-            if (employee.id == salaries[i].id) {
-                found = true;
-            }
-            if (!found) {
-                i++;
-            }
-        }
-        if (found) {
-            resolve(salaries[i].salary);
-        } else {
-            reject("Not found!");
-        }
-    })
-};
-*/
+const {
+    myPromise,
+    operation,
+    getEmployee,
+    getSalary
+  } = require('./entrega3')
 
 //Nivell 1
 /////Ex1//////////////////////////////////////////////////////////////////

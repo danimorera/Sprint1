@@ -141,3 +141,10 @@ getEmployee(1)
     getSalary(obEmpl) //retorna la promesa de salari
       .then((obSalary => console.log(`${obEmpl.name} : ${obSalary}`)))) //retorna el salari
   .catch(error => { console.log(error) });
+
+module.exports = {
+  myPromise,
+  operation,
+  getEmployee,
+  getSalary
+};
