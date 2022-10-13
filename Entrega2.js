@@ -4,8 +4,10 @@
 Mostra per la consola el resultat d'una arrow function
 autoinvocable que sumi dos nombres.
 */
-(() => {console.log(10 + 2)})();
 
+console.log((() => {
+    return 10+2;
+})());
 
 //Nivell 2
 /////Ex1////////////////////////////////////////////////////////
